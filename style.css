@@ -265,7 +265,7 @@ body {
       gap: 1.5rem;
     }
     
-    #primary-btn, #secondary-btn,#pmsc-btn {
+    #primary-btn, #secondary-btn,#cvita-btn {
       padding: 1rem 2.5rem;
       border-radius: 12px;
       text-decoration: none;
@@ -301,13 +301,13 @@ body {
     }
     
 
-     #pmsc-btn {
+     #cvita-btn {
       background: linear-gradient(135deg, #03f590, #5d5fef);
       color: #fefbfb;
       border: 2px solid #00adb5;
     }
     
-    #pmsc-btn:hover {
+    #cvita-btn:hover {
        transform: translateY(-5px);
       box-shadow: 0 15px 40px rgba(0, 173, 181, 0.4);
     }
@@ -1261,6 +1261,7 @@ section h2 {
 .contact-form button:hover {
   background-color: #e55a5a;
 }
+
 
 
 
