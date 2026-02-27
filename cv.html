@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BhuOne Joshi - Professional C.V.</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e4e7ec;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cv-container {
+    width: 210mm; /* A4 width */
+    min-height: 297mm; /* A4 height */
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+  }
+
+  /* Header */
+  .cv-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 20px;
+  }
+  .cv-header img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+  }
+  .cv-header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #333;
+  }
+  .cv-header p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #555;
+  }
+
+  /* Section Headings */
+  h2 {
+    color: #007bff;
+    margin-top: 30px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 6px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Lists */
+  ul {
+    padding-left: 25px;
+    margin-top: 8px;
+  }
+  li {
+    line-height: 1.7;
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 4px;
+  }
+
+  /* Professional Summary */
+  .cv-container p {
+    line-height: 1.7;
+    color: #444;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
+  /* Download button */
+  .download-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 14px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .download-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+  }
+
+  /* Print-friendly */
+  @media print {
+    body {
+      background: #fff;
+    }
+    .cv-container {
+      box-shadow: none;
+      border-radius: 0;
+      width: 100%;
+      min-height: auto;
+      padding: 30px;
+    }
+    .download-btn {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cv-container">
+  <!-- Header -->
+  <div class="cv-header">
+    <img src="img/BhuOne Joshi.jpeg" alt="Profile Photo">
+    <div>
+      <h1>BhuOne Joshi</h1>
+      <p>Full Stack Web Developer</p>
+      <p>Email: bhuonejoshi123@gmail.com | Contact: +977 9860132003</p>
+      <p>Address: Bajura, Nepal</p>
+    </div>
+  </div>
+
+  <!-- Professional Summary -->
+  <h2>Professional Summary</h2>
+  <p>Dedicated Full Stack Web Developer with experience in building responsive websites and web applications using HTML, CSS, JavaScript, PHP, React, and Node.js. Passionate about creating efficient and scalable solutions to real-world problems.</p>
+
+  <!-- Education -->
+  <h2>Education</h2>
+  <ul>
+    <li>SEE - NEB, GPA: 2.2 (C+), Year: 2075</li>
+    <li>+2 - NEB, Faculty: Management (CS), GPA: 3.27 (A), Year: 2078</li>
+    <li>BCA - Tribhuvan University, Nepal, Major: Computer Applications, Ongoing</li>
+  </ul>
+
+  <!-- Skills -->
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML, CSS, JavaScript, PHP, MySQL</li>
+    <li>React, Node.js, Express.js</li>
+    <li>Frontend & Backend Development</li>
+    <li>Problem Solving, Team Collaboration, Agile Development</li>
+  </ul>
+
+  <!-- Experience -->
+  <h2>Experience</h2>
+  <ul>
+    <li>Full Stack Web Developer - Freelance Projects (2022 - Present)
+      <ul>
+        <li>Developed Online Hotel Booking System, Tour and Travels Website, and E-commerce Shop Website.</li>
+      </ul>
+    </li>
+    <li>Internship - Frontend & Backend Developer at Techversity Solutions Pvt.Ltd (2021)
+      <ul>
+        <li>Worked on dynamic web applications using HTML, CSS, JavaScript, PHP & MySQL.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Projects -->
+  <h2>Projects</h2>
+  <ul>
+    <li>Online Hotel Booking System - Full stack web application with booking, payment, and admin panel.</li>
+    <li>Tour and Travels Website - Dynamic website with package booking & contact form.</li>
+    <li>E-commerce Shop Website - Shop with product catalog, cart, and checkout system.</li>
+  </ul>
+
+  <!-- Certifications -->
+  <h2>Certifications / Trainings</h2>
+  <ul>
+    <li>Full Stack Web Development Course - Techversity Solutions Pvt.Ltd</li>
+  </ul>
+
+  <!-- Interests -->
+  <h2>Interests</h2>
+  <ul>
+    <li>Programming, Problem Solving, Web Development</li>
+    <li>Traveling, Reading Tech Blogs</li>
+  </ul>
+
+  <a class="download-btn" id="downloadCV">Download C.V.</a>
+</div>
+
+<script>
+document.getElementById('downloadCV').addEventListener('click', function() {
+  const name = "BhuOne Joshi";
+  const profession = "Full Stack Web Developer";
+  const email = "bhuonejoshi123@gmail.com";
+  const contact = "+977 9860132003";
+  const address = "Bajura, Nepal";
+
+  const cvContent = `
+${name}
+${profession}
+Email: ${email}
+Contact: ${contact}
+Address: ${address}
+
+Professional Summary:
+Dedicated Full Stack Web Developer with experience in building responsive websites and web applications using HTML, CSS, JavaScript, PHP, React, and Node.js.
+
+Education:
+- SEE - NEB, GPA: 2.2 (C+), Year: 2075
+- +2 - NEB, Faculty: Management (CS), GPA: 3.27 (A), Year: 2078
+- BCA - Tribhuvan University, Nepal, Major: Computer Applications, Ongoing
+
+Skills:
+- HTML, CSS, JavaScript, PHP, MySQL
+- React, Node.js, Express.js
+- Frontend & Backend Development
+- Problem Solving, Team Collaboration, Agile Development
+
+Experience:
+- Full Stack Web Developer - Freelance Projects (2022 - Present)
+  - Developed Online Hotel Booking System, Tour and Travels Website, and E-commerce Shop Website.
+- Internship - Frontend & Backend Developer at Techversity Solutions Pvt.Ltd (2021)
+  - Worked on dynamic web applications using HTML, CSS, JavaScript, PHP & MySQL.
+
+Projects:
+- Online Hotel Booking System
+- Tour and Travels Website
+- E-commerce Shop Website
+
+Certifications:
+- Full Stack Web Development Course - Techversity Solutions Pvt.Ltd
+
+Interests:
+- Programming, Problem Solving, Web Development
+- Traveling, Reading Tech Blogs
+`;
+
+  const blob = new Blob([cvContent], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${name.replace(" ", "_")}_CV.txt`;
+  link.click();
+});
+</script>
+
+</body>
+</html>
