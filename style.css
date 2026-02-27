@@ -300,30 +300,6 @@ body {
       transform: translateY(-5px);
     }
     
-
-#vita-btn {
-padding: 1rem 2.5rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-}
-     #vita-btn {
-      background: linear-gradient(135deg, #03f590, #5d5fef);
-      color: #fefbfb;
-      border: 2px solid #00adb5;
-    }
-    
-    #vita-btn:hover {
-       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 173, 181, 0.4);
-    }
-    
   #social-links {
   display: flex;
   flex-wrap: wrap;
@@ -1272,6 +1248,7 @@ section h2 {
 .contact-form button:hover {
   background-color: #e55a5a;
 }
+
 
 
 
