@@ -5,139 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - BhuOne Joshi</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .error {
+      color: red;
+      font-size: 13px;
+      margin: 4px 0 10px;
+      display: none;
+    }
+    .error-input {
+      border: 1px solid red !important;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="navbar">
-    <div id="navdiv">
-      <div id="logo">BhuOne Joshi</div>
+<div id="navbar">
+  <div id="navdiv">
+    <div id="logo">BhuOne Joshi</div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
-      <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<section class="contact-section">
+  <div class="contact-form">
+    <h2>Contact Me</h2>
 
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <form id="contactForm" action="https://formsubmit.co/bhuvanjaishi83@gmail.com" method="POST">
+
+      <input type="text" id="name" name="name" placeholder="Full Name">
+      <div class="error" id="nameError">Only letters allowed (min 3 characters)</div>
+
+      <input type="email" id="email" name="email" placeholder="Email">
+      <div class="error" id="emailError">Enter a valid email address</div>
+
+      <input type="text" id="contact" name="contact" placeholder="Contact Number">
+      <div class="error" id="contactError">Enter valid Nepali mobile number</div>
+
+      <textarea id="message" name="message" placeholder="Message"></textarea>
+      <div class="error" id="messageError">Message must contain text only</div>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Message">
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Google Map (unchanged) -->
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.646349348771!2d85.34401370915377!3d27.717263276077567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197acf9ab2a9%3A0xec2d287b53903953!2sChabahil!5e1!3m2!1sen!2snp!4v1766829962244!5m2!1sen!2snp"
+  width="100%" height="600" style="border:0;" loading="lazy">
+</iframe>
+
+<footer id="footer">
+  <div id="footer-container">
+    <div id="footer-about">
+      <h3>BhuOne Joshi</h3>
+      <p>Web Developer | Programmer | Frontend & Backend Developer | Tech Enthusiast</p>
     </div>
   </div>
 
-  <section class="contact-section">
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form id="contactForm" action="https://formsubmit.co/bhuvanjaishi83@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="contact" placeholder="Contact Number" required>
-        <textarea name="message" placeholder="Message" required></textarea>
+  <div id="footer-bottom">
+    &copy; <span id="year"></span> BhuOne Joshi. All rights reserved.
+  </div>
+</footer>
 
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Contact Message">
-
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.646349348771!2d85.34401370915377!3d27.717263276077567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197acf9ab2a9%3A0xec2d287b53903953!2sChabahil!5e1!3m2!1sen!2snp!4v1766829962244!5m2!1sen!2snp" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <script>
-  const destination = { lat: 27.7315584, lng: 85.3508096 }; // Chabahil Chowk
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  document.getElementById("getDirection").addEventListener("click", () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const userLat = position.coords.latitude;
-          const userLng = position.coords.longitude;
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const contactInput = document.getElementById("contact");
+const messageInput = document.getElementById("message");
 
-          const url = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destination.lat},${destination.lng}&travelmode=driving`;
-          window.open(url, "_blank"); // Google Maps मा खुल्छ
-        },
-        () => {
-          alert("Unable to detect your location!");
-        }
-      );
-    } else {
-      alert("Geolocation not supported by your browser.");
-    }
-  });
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const contactError = document.getElementById("contactError");
+const messageError = document.getElementById("messageError");
+
+function validate(input, errorEl, condition) {
+  if (condition) {
+    input.classList.add("error-input");
+    errorEl.style.display = "block";
+    return false;
+  } else {
+    input.classList.remove("error-input");
+    errorEl.style.display = "none";
+    return true;
+  }
+}
+
+/* LIVE INPUT VALIDATION */
+nameInput.addEventListener("input", () => {
+  nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, "");
+  validate(nameInput, nameError, nameInput.value.trim().length < 3);
+});
+
+contactInput.addEventListener("input", () => {
+  contactInput.value = contactInput.value.replace(/[^0-9]/g, "");
+  validate(contactInput, contactError, !/^(98|97)\d{8}$/.test(contactInput.value));
+});
+
+messageInput.addEventListener("input", () => {
+  messageInput.value = messageInput.value.replace(/[0-9]/g, "");
+  validate(messageInput, messageError, messageInput.value.trim().length < 5);
+});
+
+emailInput.addEventListener("input", () => {
+  validate(emailInput, emailError,
+    !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value));
+});
+
+/* SUBMIT + SUCCESS ALERT + REDIRECT */
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const v1 = validate(nameInput, nameError, nameInput.value.trim().length < 3);
+  const v2 = validate(emailInput, emailError,
+    !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value));
+  const v3 = validate(contactInput, contactError,
+    !/^(98|97)\d{8}$/.test(contactInput.value));
+  const v4 = validate(messageInput, messageError, messageInput.value.trim().length < 5);
+
+  if (v1 && v2 && v3 && v4) {
+    fetch(this.action, {
+      method: "POST",
+      body: new FormData(this),
+      headers: { "Accept": "application/json" }
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Contact form submitted successfully!");
+        this.reset();
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(() => alert("Network error. Please try again."));
+  }
+});
 </script>
 
-  <footer id="footer">
-    <div id="footer-container">
-      <div id="footer-about">
-        <h3>BhuOne Joshi</h3>
-        <p>Web Developer | Programmer | Frontend & Backend Developer | Tech Enthusiast</p>
-      </div>
-
-      <div id="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div id="footer-contact">
-        <h4>Contact Info</h4>
-        <p>Email: <a href="mailto:bhuvanjaishi83@gmail.com">bhuvanjaishi83@gmail.com</a></p>
-        <p>Phone: +977 9860132003</p>
-        <p>Location: Kathmandu, Nepal</p>
-      </div>
-    </div>
-    
-    <div id="footer-bottom">
-  &copy; <span id="year"></span> BhuOne Joshi. All rights reserved.
-</div>
-  
-  <script>
-     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.getElementById('nav-menu');
-
-    mobileMenu.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert("Message sent successfully!");
-          form.reset();
-          setTimeout(() => { window.location.href = "index.html"; }, 1500);
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(() => { alert("Network error. Please try again."); });
-    });
-  </script>
-
 </body>
-</html> 
-
-
-
-
+</html>
