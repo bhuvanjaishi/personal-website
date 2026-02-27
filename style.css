@@ -300,6 +300,33 @@ body {
       transform: translateY(-5px);
     }
     
+
+
+    #primary-btn, #secondary-btn, #pmsc-btn {
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    #pmsc-btn {
+      background: linear-gradient(135deg, #02e26e, #5d5fef);
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 173, 181, 0.3);
+    }
+    
+    #pmsc-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 173, 181, 0.4);
+    }
+
+    
     
   #social-links {
   display: flex;
