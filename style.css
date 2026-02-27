@@ -265,7 +265,7 @@ body {
       gap: 1.5rem;
     }
     
-    #primary-btn, #secondary-btn,{
+    #primary-btn, #secondary-btn{
       padding: 1rem 2.5rem;
       border-radius: 12px;
       text-decoration: none;
@@ -299,6 +299,9 @@ body {
       background: rgba(0, 173, 181, 0.1);
       transform: translateY(-5px);
     }
+    
+
+     
     
   #social-links {
   display: flex;
@@ -1248,10 +1251,6 @@ section h2 {
 .contact-form button:hover {
   background-color: #e55a5a;
 }
-
-
-
-
 
 
 
