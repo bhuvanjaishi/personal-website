@@ -21,28 +21,29 @@
 <body>
 
 <div id="navbar">
-    <div id="navdiv">
-      <div id="logo">BhuOne Joshi</div>
+  <div id="navdiv">
+    <div id="logo">BhuOne Joshi</div>
 
-      <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </div>
 
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="overlay"></div>
+  </div>
+</div>
 
 <section class="contact-section">
   <div class="contact-form">
@@ -107,6 +108,10 @@
     &copy; <span id="year"></span> BhuOne Joshi. All rights reserved.
   </div>
 </footer>
+
+<!-- Scroll to top button -->
+  <button id="scrollTopBtn">⬆</button>
+
 
 <script src="script.js"></script>
 <script>
@@ -186,6 +191,32 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     .catch(() => alert("Network error. Please try again."));
   }
 });
+
+
+
+ /* ===== Scroll Fade Animation ===== */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("fade-in");
+        }
+      });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll(".services-grid, .content-section").forEach(el => observer.observe(el));
+
+    /* ===== Scroll to Top Button ===== */
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
+    });
+
+    scrollBtn.onclick = function() {
+      window.scrollTo({top: 0, behavior: "smooth"});
+    };
+
+
+
 </script>
 
 </body>
